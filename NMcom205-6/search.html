@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConnectNM - Events</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <a href="index.html"><img src="logo.png" class="NavImg" alt="Logo"></a>
+        <div class="menu-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="regions.html">Counties</a></li>
+            <li><a href="resource.html">Resources</a></li>
+            <li><a href="search.html">Events</a></li>
+            <li><a href="signin.html">Sign In</a></li>
+        </ul>
+    </header>
+
+    <div class="container">
+        <div class="box">
+            <h2>Post an Event</h2>
+            <input type="text" id="eventTitle" placeholder="Event Name">
+            <input type="text" id="location" placeholder="Location">
+            <button id="submitBtn">Post Event</button>
+        </div>
+
+        <div class="box">
+            <h2>Upcoming Events</h2>
+            <input type="text" id="searchInput" placeholder="Search events...">
+            <div id="results"></div>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() { document.getElementById('navLinks').classList.toggle('active'); }
+        // The event logic will work with your existing script.js or embedded script
+    </script>
+</body>
+</html>

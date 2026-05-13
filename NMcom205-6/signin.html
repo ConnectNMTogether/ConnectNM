@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConnectNM - Sign In</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <a href="index.html"><img src="logo.png" class="NavImg" alt="Logo"></a>
+        <div class="menu-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="regions.html">Counties</a></li>
+            <li><a href="resource.html">Resources</a></li>
+            <li><a href="search.html">Events</a></li>
+            <li><a href="signin.html">Sign In</a></li>
+        </ul>
+    </header>
+
+    <div class="container">
+        <div class="box" id="authBox" style="max-width: 400px; margin: auto;">
+            <div id="signupSection">
+                <h2>Create Account</h2>
+                <input type="text" id="newUsername" placeholder="Username">
+                <input type="password" id="newPassword" placeholder="Password">
+                <button onclick="handleSignup()">Sign Up</button>
+                <p>Already have an account? <a href="#" onclick="toggleForm()">Login</a></p>
+            </div>
+            <div id="loginSection" style="display:none;">
+                <h2>Login</h2>
+                <input type="text" id="loginUsername" placeholder="Username">
+                <input type="password" id="loginPassword" placeholder="Password">
+                <button onclick="handleLogin()">Login</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        function toggleMenu() { document.getElementById('navLinks').classList.toggle('active'); }
+        function toggleForm() {
+            const s = document.getElementById('signupSection');
+            const l = document.getElementById('loginSection');
+            s.style.display = s.style.display === "none" ? "block" : "none";
+            l.style.display = l.style.display === "none" ? "block" : "none";
+        }
+    </script>
+</body>
+</html>

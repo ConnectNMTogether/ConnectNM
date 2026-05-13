@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConnectNM - Chaves County</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <a href="index.html"><img src="logo.png" class="NavImg" alt="Logo"></a>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="regions.html"> Counties</a></li>
+            <li><a href="resource.html">Resources</a></li>
+            <li><a href="search.html">Events</a></li>
+            <li><a href="signin.html">Sign In</a></li>
+        </ul>
+    </header>
+
+    <div class="hero" style="height: 30vh; background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('sky.jpg');">
+        <h1>Chaves County</h1>
+    </div>
+
+    <div class="container">
+        <div class="box">
+          <div>
+                  <h3>Local Events</h3>
+                    <p>Explore annual festivals and community events across Chaves County.</p>
+                    <a href="https://www.chavescounty.net/life/annual-events" class="county-card" style="display: inline-block; margin-top: 10px;">See Events</a>
+                </div>
+                <div>
+                    <h3>Community Resources</h3>
+                    <p>Discover local initiatives and support services available to the community.</p>
+                    <a href="https://www.100chavescounty.com/" class="county-card" style="display: inline-block; margin-top: 10px;">Explore Resources</a>
+                </div>
+             <a href="regions.html" style="display: inline-block; margin-top: 20px; color: #CC5803; font-weight: bold; text-decoration: none;">
+            ← Back to All Counties
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Inline safety check for the menu
+        function toggleMenu() {
+            const nav = document.getElementById('navLinks');
+            if(nav) nav.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

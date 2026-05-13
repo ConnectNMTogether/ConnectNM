@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConnectNM - Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <a href="index.html"><img src="logo.png" class="NavImg" alt="Logo"></a>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="regions.html">Counties</a></li>
+            <li><a href="resource.html">Resources</a></li>
+            <li><a href="search.html">Events</a></li>
+            <li><a href="signin.html">Sign In</a></li>
+        </ul>
+    </header>
+
+    <div class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('balloons.jpg');">
+        <div>
+            <h1>ConnectNM</h1>
+            <p>Bridging New Mexico Communities Through Local Events</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="box mission-grid">
+            <div>
+                <h2>Our Mission</h2>
+                <p>We catalog events across the Land of Enchantment to foster community participation and volunteerism. Whether you're looking for a local market in Santa Fe or a workshop in Las Cruces, ConnectNM helps you find your place.</p>
+            </div>
+            <div style="background: #fdf2e9; padding: 20px; border-radius: 8px; border-left: 5px solid #CC5803;">
+                <h3>Did you know?</h3>
+                <p>New Mexico has 33 counties, each with unique traditions and resources. Explore them all today!</p>
+            </div>
+        </div>
+
+        <div class="box">
+            <h2>Featured Counties to Explore</h2>
+            <p style="margin-bottom: 20px;">Check out these random regions today (refresh to see more!):</p>
+            <div class="counties-grid" id="featuredGrid">
+                </div>
+        </div>
+
+        <div class="box">
+            <h2>How It Works</h2>
+            <div class="mission-grid" style="margin-top: 20px;">
+                <div class="TextCenter">
+                    <strong style="color: #CC5803; font-size: 1.5rem;">1</strong>
+                    <p><strong>Find Your Area</strong><br>Head to the Counties page to select your home region.</p>
+                </div>
+                <div class="TextCenter">
+                    <strong style="color: #CC5803; font-size: 1.5rem;">2</strong>
+                    <p><strong>Discover Events</strong><br>See real-time events and local resources curated for you.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Random County Generator
+        const allCounties = [
+            { name: "Bernalillo", link: "bern.html" },
+            { name: "San Juan", link: "sj.html" },
+            { name: "Santa Fe", link: "sf.html" },
+            { name: "Dona Ana", link: "da.html" },
+            { name: "Rio Arriba", link: "ra.html" },
+            { name: "Taos", link: "taos.html" },
+            { name: "Eddy", link: "eddy.html" },
+            { name: "Valencia", link: "val.html" }
+        ];
+
+        function displayFeatured() {
+            const grid = document.getElementById('featuredGrid');
+            // Shuffle array
+            const shuffled = allCounties.sort(() => 0.5 - Math.random());
+            // Pick first 3
+            const selected = shuffled.slice(0, 3);
+            
+            selected.forEach(county => {
+                const card = document.createElement('a');
+                card.href = county.link;
+                card.className = "county-card";
+                card.innerText = county.name;
+                grid.appendChild(card);
+            });
+        }
+
+        // Run on load
+        window.onload = displayFeatured;
+
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
