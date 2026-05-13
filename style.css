@@ -1,0 +1,167 @@
+/* General Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #CC5803;
+    padding: 10px 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    min-height: 80px;
+}
+
+.NavImg { max-height: 55px; }
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #D9C6A1;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: white;
+}
+
+/* Layout Containers */
+.container { max-width: 1100px; margin: 30px auto; padding: 0 20px; }
+.box {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+/* Hero Section */
+.hero {
+    height: 40vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('mou2.png') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+
+}
+
+
+/* Counties Grid */
+.counties-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.county-card {
+    background: #e2711d;
+    color: white !important;
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.county-card:hover { background: #85001f; transform: translateY(-3px); }
+
+/* Forms */
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+button {
+    background: #CC5803;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .menu-toggle { display: flex; }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: #CC5803;
+        padding: 20px;
+    }
+    .nav-links.active { display: flex; }
+    .mission-grid { display: block; }
+}
+
+/* Ensure the mobile menu is hidden by default but reachable */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Controlled by the .active class in JS */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        background-color: #CC5803;
+        padding: 20px;
+        text-align: center;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+}
+
+/* Event List Styling */
+#results .box {
+    border-left: 5px solid #CC5803;
+    transition: 0.3s;
+}
+
+#results .box:hover {
+    background: #fff8f2;
+}
+
+/* Modal/Popup Placeholder */
+#modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8);
+}

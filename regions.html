@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConnectNM - Counties</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <a href="index.html"><img src="logo.png" class="NavImg" alt="Logo"></a>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="regions.html">Counties</a></li>
+            <li><a href="resource.html">Resources</a></li>
+            <li><a href="search.html">Events</a></li>
+            <li><a href="signin.html">Sign In</a></li>
+        </ul>
+    </header>
+
+    <div class="container">
+        <div class="box">
+            <h1>Find Your County</h1>
+            <p>Select a county to find local community events and resources.</p>
+            <input type="text" id="countySearch" placeholder="Search counties (e.g. Bernalillo, Santa Fe)..." onkeyup="filterCounties()">
+            
+            <div class="counties-grid" id="countiesGrid">
+                <a href="sj.html" class="county-card" data-name="san juan">San Juan</a>
+                <a href="ra.html" class="county-card" data-name="rio arriba">Rio Arriba</a>
+                <a href="taos.html" class="county-card" data-name="taos">Taos</a>
+                <a href="coflax.html" class="county-card" data-name="colfax">Colfax</a>
+                <a href="union.html" class="county-card" data-name="union">Union</a>
+                <a href="mk.html" class="county-card" data-name="mckinley">McKinley</a>
+                <a href="la.html" class="county-card" data-name="los alamos">Los Alamos</a>
+                <a href="sf.html" class="county-card" data-name="santa fe">Santa Fe</a>
+                <a href="mora.html" class="county-card" data-name="mora">Mora</a>
+                <a href="hard.html" class="county-card" data-name="harding">Harding</a>
+                <a href="sand.html" class="county-card" data-name="sandoval">Sandoval</a>
+                <a href="sm.html" class="county-card" data-name="san miguel">San Miguel</a>
+                <a href="quay.html" class="county-card" data-name="quay">Quay</a>
+
+                <a href="bern.html" class="county-card" data-name="bernalillo">Bernalillo</a>
+                <a href="ci.html" class="county-card" data-name="cibola">Cibola</a>
+                <a href="val.html" class="county-card" data-name="valencia">Valencia</a>
+                <a href="torr.html" class="county-card" data-name="torrance">Torrance</a>
+                <a href="socc.html" class="county-card" data-name="socorro">Socorro</a>
+                <a href="catr.html" class="county-card" data-name="catron">Catron</a>
+
+                <a href="curry.html" class="county-card" data-name="curry">Curry</a>
+                <a href="db.html" class="county-card" data-name="de baca">De Baca</a>
+                <a href="roos.html" class="county-card" data-name="roosevelt">Roosevelt</a>
+                <a href="chav.html" class="county-card" data-name="chaves">Chaves</a>
+                <a href="linc.html" class="county-card" data-name="lincoln">Lincoln</a>
+                <a href="sier.html" class="county-card" data-name="sierra">Sierra</a>
+                <a href="da.html" class="county-card" data-name="dona ana">Dona Ana</a>
+                <a href="otero.html" class="county-card" data-name="otero">Otero</a>
+                <a href="eddy.html" class="county-card" data-name="eddy">Eddy</a>
+                <a href="lea.html" class="county-card" data-name="lea">Lea</a>
+                <a href="hid.html" class="county-card" data-name="hidalgo">Hidalgo</a>
+                <a href="grant.html" class="county-card" data-name="grant">Grant</a>
+                <a href="luna.html" class="county-card" data-name="luna">Luna</a>
+                <a href="guad.html" class="county-card" data-name="guadalupe">Guadalupe</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Ensure menu and search work correctly
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+        function filterCounties() {
+            let val = document.getElementById('countySearch').value.toLowerCase();
+            let cards = document.querySelectorAll('.county-card');
+            cards.forEach(c => {
+                c.style.display = c.getAttribute('data-name').includes(val) ? "block" : "none";
+            });
+        }
+    </script>
+</body>
+</html>

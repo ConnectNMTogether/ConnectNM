@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConnectNM - Resources</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <a href="index.html"><img src="logo.png" class="NavImg" alt="Logo"></a>
+        <div class="menu-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="regions.html">Counties</a></li>
+            <li><a href="resource.html">Resources</a></li>
+            <li><a href="search.html">Events</a></li>
+            <li><a href="signin.html">Sign In</a></li>
+        </ul>
+    </header>
+
+    <div class="container">
+        <div class="box">
+            <h2>Resources & Credits</h2>
+            <p><strong>Hosting:</strong> GitHub Pages - no structures in GitHub were used</p>
+            <p><strong>Icons:</strong> Flaticon</p>
+            <p><strong>Images:</strong> Community contributed. (Team members)</p>
+            <p><strong>Copyright Checklist:</strong> <a href = "Webmaster copyright checklist 26.pdf">Copy Right Checklist</a>.</p>
+             <p><strong>Team Worklog:</strong> <a href = "Webmaster Worklog 26 Nationals.pdf">Worklog</a>.</p>
+        </div>
+    </div>
+    <script>
+        function toggleMenu() { document.getElementById('navLinks').classList.toggle('active'); }
+    </script>
+</body>
+</html>

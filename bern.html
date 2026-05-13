@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConnectNM - Bernalillo County</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <a href="index.html"><img src="logo.png" class="NavImg" alt="Logo"></a>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="regions.html">Counties</a></li>
+            <li><a href="resource.html">Resources</a></li>
+            <li><a href="search.html">Events</a></li>
+            <li><a href="signin.html">Sign In</a></li>
+        </ul>
+    </header>
+
+    <div class="hero" style="height: 30vh; background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('sky.jpg');">
+        <h1>Bernalillo County</h1>
+    </div>
+
+    <div class="container">
+        <div class="box">
+            <h2>Local Events & Community Resources</h2>
+            <p>Stay updated with major events and community programs in the Albuquerque metro area.</p>
+            
+            <div class="counties-grid" style="margin-top: 20px;">
+                <a href="https://www.predicthq.com/major-events/counties/us-new-mexico-bernalillo-county" target="_blank" class="county-card">
+                    View Major Events
+                </a>
+                
+                <a href="https://www.bernco.gov/community-services/" target="_blank" class="county-card">
+                    BernCo Services
+                </a>
+            </div>
+        </div>
+
+        <a href="regions.html" style="display: inline-block; margin-top: 20px; color: #CC5803; font-weight: bold; text-decoration: none;">
+            ← Back to All Counties
+        </a>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Inline safety check for the menu
+        function toggleMenu() {
+            const nav = document.getElementById('navLinks');
+            if(nav) nav.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
